@@ -1,0 +1,34 @@
+// --------------------------------------
+// This file contains CSS helper classes.
+// --------------------------------------
+
+@use "../abstracts/" as *;
+
+// Hide element while making it readable for screen readers
+.visually-hidden {
+  @include visually-hidden;
+
+  &-focusable:not(:focus):not(:focus-within) {
+    @extend .visually-hidden;
+  }
+}
+
+// Apply styles to title and description text
+.primary-heading,
+.secondary-heading {
+  font-weight: var(--fw-bold);
+  margin-block-end: var(--spacer-300);
+}
+
+.primary-heading {
+  font-size: var(--fs-primary-heading);
+}
+
+.secondary-heading {
+  font-size: var(--fs-secondary-heading);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-regular);
+}

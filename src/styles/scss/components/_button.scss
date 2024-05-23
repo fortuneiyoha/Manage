@@ -1,0 +1,41 @@
+// --------------------------------------------------------------
+// This file contains all styles related to the button component.
+// --------------------------------------------------------------
+
+.btn {
+  background: transparent;
+  border: 0.0625rem solid transparent;
+  border-radius: 100vw;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-medium);
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 200ms;
+
+  &-primary,
+  &-secondary {
+    --btn-shadow: none;
+    box-shadow: 0 0.2rem 0.6rem var(--btn-shadow);
+    padding: var(--spacer-400) var(--spacer-600);
+
+    &:is(:hover, :focus-visible) {
+      opacity: 0.7;
+    }
+  }
+
+  &-primary {
+    --btn-shadow: hsla(12, 88%, 59%, 0.6);
+    background-color: var(--clr-primary-100);
+    color: var(--clr-neutral-100);
+  }
+
+  &-secondary {
+    --btn-shadow: hsla(233, 12%, 13%, 0.2);
+    background-color: var(--clr-neutral-100);
+    color: var(--clr-primary-100);
+    outline-color: var(--clr-neutral-100);
+  }
+}

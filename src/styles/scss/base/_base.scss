@@ -1,0 +1,78 @@
+// -----------------------------------------------
+// This file contains basic and typography styles.
+// -----------------------------------------------
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-300);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  word-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--clr-primary-200);
+  font-weight: var(--fw-bold);
+}
+
+p {
+  line-height: 1.8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+summary {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+picture,
+source,
+img {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+:focus-visible {
+  outline-offset: var(--spacer-100);
+  outline: 0.125rem dotted var(--clr-primary-100);
+  transition: var(--transition);
+}

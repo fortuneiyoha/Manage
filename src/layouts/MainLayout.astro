@@ -1,0 +1,72 @@
+---
+import "../styles/scss/style.scss";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <title>Manage | Makes team planning easier.</title>
+
+    <!-- FIXME: Improve meta tags title and description. -->
+    <!-- Primary Meta Tags -->
+    <meta name="author" content="Fortune O. Iyoha" />
+    <meta name="title" content="Manage | Makes team planning easier." />
+    <meta
+      name="description"
+      content="Manage | Makes team planning easier ... ... ..."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manage.pages.dev/" />
+    <meta property="og:title" content="Manage | Makes team planning easier." />
+    <meta
+      property="og:description"
+      content="Manage | Makes team planning easier ... ... ..."
+    />
+    <meta property="og:image" content="https://manage.pages.dev/manage.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://manage.pages.dev/" />
+    <meta
+      property="twitter:title"
+      content="Manage | Makes team planning easier."
+    />
+    <meta
+      property="twitter:description"
+      content="Manage | Makes team planning easier ... ... ..."
+    />
+    <meta
+      property="twitter:image"
+      content="https://manage.pages.dev/manage.jpg"
+    />
+    <!-- Meta Tags Generated with https://metatags.io -->
+  </head>
+
+  <body>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  body.active {
+    height: 100vh;
+    overflow: hidden;
+  }
+</style>

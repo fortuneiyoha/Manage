@@ -1,0 +1,150 @@
+<section class="features">
+  <div class="container">
+    <div class="grid">
+      <div class="column">
+        <h2 class="primary-heading">
+          What&CloseCurlyQuote;s different about Manage?
+        </h2>
+        <p class="lead">
+          Manage provides all the functionality your team needs, without the
+          complexity. Our software is tailor-made for modern digital product
+          teams.
+        </p>
+      </div>
+
+      <div class="column">
+        <ul class="features-list">
+          <li class="features-item">
+            <span class="features-item-num"></span>
+            <h2 class="features-title">Track company-wide progress</h2>
+            <p class="lead">
+              See how your day-to-day tasks fit into the wider vision. Go from
+              tracking progress at the milestone level all the way done to the
+              smallest of details. Never lose sight of the bigger picture again.
+            </p>
+          </li>
+
+          <li class="features-item">
+            <span class="features-item-num"></span>
+            <h2 class="features-title">Advanced built-in reports</h2>
+            <p class="lead">
+              Set internal delivery estimates and track progress toward company
+              goals. Our customisable dashboard helps you build out the reports
+              you need to keep key stakeholders informed.
+            </p>
+          </li>
+
+          <li class="features-item">
+            <span class="features-item-num"></span>
+            <h2 class="features-title">Everything you need in one place</h2>
+            <p class="lead">
+              Stop jumping from one service to another to communicate, store
+              files, track tasks and share documents. Manage offers an
+              all-in-one team productivity solution.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "../styles/scss/abstracts/" as *;
+
+  .features {
+    margin-block-end: var(--spacer-900);
+
+    @include breakpoint-up(md) {
+      margin-block-end: calc(var(--spacer-400) * 8);
+    }
+  }
+
+  .features .column:first-of-type {
+    @include breakpoint-down(md) {
+      text-align: center;
+    }
+
+    @include breakpoint-up(md) {
+      .lead {
+        max-width: 32ch;
+      }
+    }
+  }
+
+  .features-list {
+    counter-reset: feature-num;
+  }
+
+  .features-item {
+    --gap: 0.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--gap);
+    isolation: isolate;
+
+    &:not(:last-child) {
+      margin-block-end: var(--spacer-500);
+    }
+
+    @include breakpoint-up(md) {
+      --gap: 0.5rem 1rem;
+    }
+
+    .lead {
+      grid-column: 1/-1;
+
+      @include breakpoint-up(md) {
+        grid-column: 2 / auto;
+      }
+    }
+  }
+
+  .features-item-num::before {
+    counter-increment: feature-num;
+    content: "0" counter(feature-num);
+    background-color: var(--clr-primary-100);
+    align-items: center;
+    border-radius: 100vw;
+    color: var(--clr-neutral-100);
+    display: flex;
+    font-weight: var(--fw-bold);
+    height: 100%;
+    justify-content: center;
+    padding: var(--spacer-200);
+    text-align: center;
+    width: 3.4375rem; // 55px
+
+    @include breakpoint-up(md) {
+      width: 4.375rem; // 70px
+    }
+  }
+
+  .features .features-title {
+    display: flex;
+    align-items: center;
+    font-size: var(--fs-400);
+
+    &::before {
+      @include breakpoint-down(md) {
+        content: "";
+        background-color: inherit;
+        font-weight: inherit;
+        height: 100%;
+        inset-inline-start: -8%;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+      }
+
+      @include breakpoint-down(sm) {
+        inset-inline-start: -10%;
+      }
+    }
+
+    @include breakpoint-down(md) {
+      background-color: var(--clr-neutral-200);
+      position: relative;
+    }
+  }
+</style>

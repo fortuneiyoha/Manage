@@ -1,0 +1,26 @@
+// -----------------------------------------------
+// This file contains all @font-face declarations.
+// -----------------------------------------------
+
+// FIXME:  Convert fonts to woff and change format
+// Be Vietnam Pro
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/be-vietnam-pro-regular.ttf) /* format("woff") */;
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/be-vietnam-pro-medium.ttf) /* format("woff") */;
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/be-vietnam-pro-bold.ttf) /* format("woff") */;
+}

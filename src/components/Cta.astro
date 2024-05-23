@@ -1,0 +1,40 @@
+<section class="cta">
+  <div class="container">
+    <div class="grid">
+      <div class="column">
+        <h2 class="primary-heading">Simplify how your team works today.</h2>
+      </div>
+
+      <div class="column">
+        <a href="#get-started" class="btn btn-secondary">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "../styles/scss/abstracts/" as *;
+
+  .cta {
+    background-color: var(--clr-primary-100);
+    padding-block: var(--spacer-900);
+
+    @include breakpoint-down(md) {
+      text-align: center;
+    }
+  }
+
+  .cta .grid {
+    --gap: 2rem;
+    place-items: center;
+
+    @include breakpoint-up(md) {
+      justify-items: end;
+    }
+  }
+
+  .cta .primary-heading {
+    color: var(--clr-neutral-100);
+    margin: initial;
+  }
+</style>

@@ -1,0 +1,254 @@
+---
+import "a11y-slider/dist/a11y-slider.css";
+---
+
+<section class="testimonials">
+  <div class="container">
+    <h2 class="primary-heading">What they&CloseCurlyQuote;ve said</h2>
+
+    <ul id="slider" class="slider">
+      <li>
+        <div class="slider-item">
+          <img
+            src="/images/avatar-anisha.png"
+            alt="avatar"
+            class="slider-image"
+          />
+          <h2 class="slider-heading">Anisha Li</h2>
+          <p class="slider-lead lead">
+            &OpenCurlyDoubleQuote;Manage has supercharged our
+            team&CloseCurlyQuote;s workflow. The ability to maintain visibility
+            on larger milestones at all times keeps everyone
+            motivated.&CloseCurlyDoubleQuote;
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div class="slider-item">
+          <img src="/images/avatar-ali.png" alt="avatar" class="slider-image" />
+          <h2 class="slider-heading">Ali Bravo</h2>
+          <p class="slider-lead lead">
+            &OpenCurlyDoubleQuote;We have been able to cancel so many other
+            subscriptions since using Manage. There is no more cross-channel
+            confusion and everyone is much more focused.&CloseCurlyDoubleQuote;
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div class="slider-item">
+          <img
+            src="/images/avatar-richard.png"
+            alt="avatar"
+            class="slider-image"
+          />
+          <h2 class="slider-heading">Richard Watts</h2>
+          <p class="slider-lead lead">
+            &OpenCurlyDoubleQuote;Manage allows us to provide structure and
+            process. It keeps us organized and focused. I can&CloseCurlyQuote;t
+            stop recommending them to everyone I talk to!&CloseCurlyDoubleQuote;
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div class="slider-item">
+          <img
+            src="/images/avatar-shanai.png"
+            alt="avatar"
+            class="slider-image"
+          />
+          <h2 class="slider-heading">Shanai Gough</h2>
+          <p class="slider-lead lead">
+            &OpenCurlyDoubleQuote;Their software allows us to track, manage and
+            collaborate on our projects from anywhere. It keeps the whole team
+            in-sync without being intrusive.&CloseCurlyDoubleQuote;
+          </p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="slider-controls"></div>
+
+    <a href="#get-started" class="btn btn-primary">Get Started</a>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "../styles/scss/abstracts/" as *;
+
+  .testimonials {
+    margin-block-end: var(--spacer-900);
+    text-align: center;
+
+    @include breakpoint-up(md) {
+      margin-block-end: calc(var(--spacer-400) * 8);
+    }
+  }
+
+  .testimonials .primary-heading {
+    margin-block-end: var(--spacer-900);
+  }
+
+  // FIXME: Delete line after debugging
+  .testimonials .btn-primary {
+    margin-block-start: var(--spacer-700);
+  }
+</style>
+
+<style lang="scss" is:inline>
+  @use "../styles/scss/abstracts/" as *;
+
+  .slider {
+    display: flex;
+    list-style: none;
+    margin: 10px -10px 20px;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    clear: both;
+  }
+
+  .slider > li {
+    display: block;
+    flex: 0 0 auto;
+    // height: 200px;
+    padding: 0 10px;
+  }
+
+  .slider > li > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* width: calc(100% - 20px);
+          margin: 0 auto; */
+  }
+
+  .a11y-slider-next {
+    float: right;
+  }
+
+  .a11y-slider-active {
+    text-decoration: underline;
+  }
+
+  .a11y-slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .a11y-slider-dots > li {
+    display: block;
+    margin: 0 10px;
+  }
+
+  .a11y-slider-dots > li > button {
+    border: 1px solid grey;
+    border-radius: 100%;
+    background: none;
+    text-indent: -9999px;
+    width: 14px;
+    height: 14px;
+    padding: 0;
+  }
+
+  .a11y-slider-dots > li > button.active {
+    background: #d7d0e9;
+  }
+
+  .a11y-slider-autoplay[data-autoplaying="true"]::after {
+    content: " (Autoplaying)";
+  }
+
+  /* Specific Styling */
+  #slider > * {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    #slider > * {
+      width: 33.333% !important;
+    }
+  }
+
+  .slider-controls {
+    outline: 2px solid var(--clr-primary-100);
+    padding: var(--spacer-500);
+  }
+
+  .slider-controls .a11y-slider-dots li > * {
+    cursor: pointer;
+    vertical-align: sub;
+  }
+
+  // Slider
+  .slider-item {
+    @include flex($align: center);
+    flex-flow: column nowrap;
+    gap: var(--gap);
+    background-color: var(--clr-neutral-200);
+    border-radius: var(--spacer-200);
+    overflow: visible;
+
+    // FIXME: For debugging
+    position: relative;
+    padding: var(--spacer-700) var(--spacer-500) var(--spacer-600);
+    border: 2px solid var(--clr-primary-100);
+    flex-basis: 540px;
+    // max-width: 540px;
+    margin-inline: auto;
+  }
+
+  .slider-image {
+    position: absolute;
+    inset: -2.1875rem auto auto 50%;
+    transform: translateX(-50%);
+    aspect-ratio: 1/1;
+    width: 3.75rem; // 60px
+  }
+
+  .slider-heading {
+    font-size: var(--fs-400);
+  }
+</style>
+
+<script>
+  import A11YSlider from "a11y-slider";
+
+  const slider = document.querySelector("#slider");
+
+  slider.addEventListener("init", function (e) {
+    const dots = e.detail.a11ySlider.dots;
+    const customArea = document.querySelector(".slider-controls");
+
+    customArea.insertAdjacentElement("beforeend", dots);
+
+    console.log("init event", e.detail.a11ySlider);
+  });
+
+  window.a11ySlider = new A11YSlider(slider, {
+    slidesToShow: 1,
+    arrows: true, // arrows enabled 767px and down
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 1000,
+    adaptiveHeight: true,
+    responsive: {
+      768: {
+        slidesToShow: 4,
+        arrows: false,
+        dots: false,
+      },
+    },
+    customPaging: function (index, a11ySlider) {
+      return '<button type="button" class="btn">' + (index + 1) + "</button>";
+    },
+  });
+</script>

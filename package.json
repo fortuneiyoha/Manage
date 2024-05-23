@@ -1,0 +1,18 @@
+{
+  "name": "manage",
+  "version": "1.0.0",
+  "description": "This is a solution to the [Manage landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/manage-landing-page-SLXqC6P5).",
+  "main": "astro.config.mjs",
+  "author": "Fortune Iyoha",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "a11y-slider": "^0.4.22",
+    "astro": "^4.6.3"
+  }
+}

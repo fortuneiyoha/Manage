@@ -1,0 +1,74 @@
+<section class="intro">
+  <div class="container">
+    <div class="grid">
+      <div class="column">
+        <img src="/images/illustration-intro.svg" alt="" />
+      </div>
+
+      <div class="column">
+        <h1 class="intro-title">
+          Bring everyone together to build better products.
+        </h1>
+
+        <p class="lead">
+          Manage makes it simple for software teams to plan day-to-day tasks
+          while keeping the larger team goals in view.
+        </p>
+        <a href="#get-started" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "../styles/scss/abstracts/" as *;
+
+  .intro {
+    @include flex($align: center, $justify: space-between);
+    margin-block-end: var(--spacer-900);
+
+    @include breakpoint-up(md) {
+      margin-block-end: calc(var(--spacer-400) * 8);
+    }
+
+    @include breakpoint-down(md) {
+      text-align: center;
+    }
+  }
+
+  .intro .grid {
+    align-items: center;
+
+    @include breakpoint-down(md) {
+      --gap: 1rem;
+      justify-items: center;
+    }
+
+    .column:first-of-type {
+      @include breakpoint-up(md) {
+        order: 2;
+      }
+    }
+  }
+
+  // Clamp: font-size adjust automatically based on browser window width
+  .intro-title {
+    font-size: clamp(var(--fs-600), 1.8vw + var(--fs-600), 3.2rem);
+    margin-block-end: var(--spacer-300);
+  }
+
+  .intro .lead {
+    margin-block-end: var(--spacer-500);
+
+    @include breakpoint-up(md) {
+      max-width: 32ch;
+    }
+  }
+
+  .intro-title,
+  .intro .lead {
+    @include breakpoint-up(md) {
+      margin-block-end: var(--spacer-600);
+    }
+  }
+</style>
