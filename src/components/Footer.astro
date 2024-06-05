@@ -192,23 +192,19 @@ const navLinks = [
     @include flex($align: center, $justify: space-between);
     gap: var(--gap);
 
-    @include breakpoint-up(sm) {
-      flex-flow: row wrap;
+    @include breakpoint-up(md) {
+      @include breakpoint-down(lg) {
+        flex-flow: row wrap;
+      }
     }
 
-    // FIXME: Fix width issue to match design
     &-input {
       border: none;
       border-radius: 100vw;
       color: var(--clr-primary-200);
-      // flex-grow: 1;
       font-size: var(--fs-400);
       padding: var(--spacer-400) var(--spacer-500);
-      // width: 68%;
-
-      @include breakpoint-up(sm) {
-        flex-grow: 1;
-      }
+      width: calc(100% - var(--spacer-100));
 
       &:focus-visible {
         outline-style: solid;
@@ -217,6 +213,12 @@ const navLinks = [
 
       &::placeholder {
         color: var(--clr-neutral-300);
+      }
+
+      @include breakpoint-up(md) {
+        @include breakpoint-down(lg) {
+          width: 100%;
+        }
       }
     }
 
@@ -234,6 +236,7 @@ const navLinks = [
   .footer .column-nav-links {
     .grid {
       --column-count: 2;
+      --gap: 0;
       place-items: flex-start;
 
       @include breakpoint-down(md) {

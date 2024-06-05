@@ -39,19 +39,18 @@
   .intro .grid {
     align-items: center;
 
+    @include breakpoint-up(md) {
+      > .column:first-of-type {
+        order: 2;
+      }
+    }
+
     @include breakpoint-down(md) {
       --gap: 1rem;
       justify-items: center;
     }
-
-    .column:first-of-type {
-      @include breakpoint-up(md) {
-        order: 2;
-      }
-    }
   }
 
-  // Clamp: font-size adjust automatically based on browser window width
   .intro-title {
     font-size: clamp(var(--fs-600), 1.8vw + var(--fs-600), 3.2rem);
     margin-block-end: var(--spacer-300);
