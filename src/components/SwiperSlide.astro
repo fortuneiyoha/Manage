@@ -1,0 +1,51 @@
+---
+/* Exception: [prop: lead], Element: [<p>]
+ * Reason: To support HTML Entities as content.
+ */
+interface Props {
+  img: string;
+  title: string;
+}
+
+const { img, title } = Astro.props as Props;
+---
+
+<div class="swiper-slide">
+  <img src={img} alt="author-image" class="swiper-image" />
+  <h2 class="swiper-title">{title}</h2>
+  <p class="swiper-lead lead">
+    <slot />
+  </p>
+</div>
+
+<style lang="scss">
+  @use "../styles/scss/abstracts/" as *;
+
+  .swiper-slide {
+    @include flex($align: center, $justify: center);
+    background-color: var(--clr-neutral-200);
+    border-radius: var(--spacer-200);
+    flex-flow: column nowrap;
+    gap: var(--gap);
+    outline: 0.125rem solid var(--clr-primary-100);
+    padding-block: var(--spacer-700) var(--spacer-600);
+    position: relative;
+    text-align: center;
+  }
+
+  .swiper-image {
+    aspect-ratio: 1/1;
+    position: absolute;
+    inset: -2.1875rem auto auto 50%;
+    transform: translateX(-50%);
+    width: 3.75rem;
+  }
+
+  .swiper-title {
+    font-size: var(--fs-400);
+  }
+
+  .swiper-lead {
+    padding-inline: var(--spacer-400);
+  }
+</style>

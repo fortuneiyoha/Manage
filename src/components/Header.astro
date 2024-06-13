@@ -1,12 +1,21 @@
 ---
-const navLinks = ["Pricing", "Product", "About Us", "Careers", "Community"];
+const navLinks: string[] = [
+  "Pricing",
+  "Product",
+  "About Us",
+  "Careers",
+  "Community",
+];
 ---
 
 <header class="header">
   <div class="container">
     <a href="#main" class="visually-hidden-focusable">Skip to main content</a>
-    <a href="#" class="logo"
-      ><svg xmlns="http://www.w3.org/2000/svg" width="146" height="24"
+    <a href="/" class="logo"
+      ><span class="visually-hidden">Logo</span><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="146"
+        height="24"
         ><g fill="none" fill-rule="evenodd"
           ><path
             fill="var(--clr-primary-200)"

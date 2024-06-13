@@ -1,69 +1,37 @@
+---
+import Swiper from "./Swiper.astro";
+import SwiperSlide from "./SwiperSlide.astro";
+---
+
 <section class="testimonials">
   <div class="container">
     <h2 class="primary-heading">What they&CloseCurlyQuote;ve said</h2>
 
-    <ul id="slider" class="slider">
-      <li class="slider-item">
-        <div class="slider-card">
-          <img
-            src="/images/avatar-anisha.png"
-            alt="avatar"
-            class="slider-image"
-          />
-          <h2 class="slider-heading">Anisha Li</h2>
-          <p class="slider-lead lead">
-            &OpenCurlyDoubleQuote;Manage has supercharged our
-            team&CloseCurlyQuote;s workflow. The ability to maintain visibility
-            on larger milestones at all times keeps everyone
-            motivated.&CloseCurlyDoubleQuote;
-          </p>
-        </div>
-      </li>
+    <Swiper>
+      <SwiperSlide img="/images/avatar-anisha.png" title="Anisha Li">
+        &OpenCurlyDoubleQuote;Manage has supercharged our team&CloseCurlyQuote;s
+        workflow. The ability to maintain visibility on larger milestones at all
+        times keeps everyone motivated.&CloseCurlyDoubleQuote;
+      </SwiperSlide>
 
-      <li class="slider-item">
-        <div class="slider-card">
-          <img src="/images/avatar-ali.png" alt="avatar" class="slider-image" />
-          <h2 class="slider-heading">Ali Bravo</h2>
-          <p class="slider-lead lead">
-            &OpenCurlyDoubleQuote;We have been able to cancel so many other
-            subscriptions since using Manage. There is no more cross-channel
-            confusion and everyone is much more focused.&CloseCurlyDoubleQuote;
-          </p>
-        </div>
-      </li>
+      <SwiperSlide img="/images/avatar-ali.png" title="Ali Bravo">
+        &OpenCurlyDoubleQuote;We have been able to cancel so many other
+        subscriptions since using Manage. There is no more cross-channel
+        confusion and everyone is much more focused.&CloseCurlyDoubleQuote;
+      </SwiperSlide>
 
-      <li class="slider-item">
-        <div class="slider-card">
-          <img
-            src="/images/avatar-richard.png"
-            alt="avatar"
-            class="slider-image"
-          />
-          <h2 class="slider-heading">Richard Watts</h2>
-          <p class="slider-lead lead">
-            &OpenCurlyDoubleQuote;Manage allows us to provide structure and
-            process. It keeps us organized and focused. I can&CloseCurlyQuote;t
-            stop recommending them to everyone I talk to!&CloseCurlyDoubleQuote;
-          </p>
-        </div>
-      </li>
+      <SwiperSlide img="/images/avatar-richard.png" title="Richard Watts">
+        &OpenCurlyDoubleQuote;Manage allows us to provide structure and process.
+        It keeps us organized and focused. I can&CloseCurlyQuote;t stop
+        recommending them to everyone I talk to!&CloseCurlyDoubleQuote;
+      </SwiperSlide>
 
-      <li class="slider-item">
-        <div class="slider-card">
-          <img
-            src="/images/avatar-shanai.png"
-            alt="avatar"
-            class="slider-image"
-          />
-          <h2 class="slider-heading">Shanai Gough</h2>
-          <p class="slider-lead lead">
-            &OpenCurlyDoubleQuote;Their software allows us to track, manage and
-            collaborate on our projects from anywhere. It keeps the whole team
-            in-sync without being intrusive.&CloseCurlyDoubleQuote;
-          </p>
-        </div>
-      </li>
-    </ul>
+      <SwiperSlide img="/images/avatar-shanai.png" title="Shanai Gough">
+        &OpenCurlyDoubleQuote;Their software allows us to track, manage and
+        collaborate on our projects from anywhere. It keeps the whole team
+        in-sync without being intrusive.&CloseCurlyDoubleQuote;
+      </SwiperSlide>
+    </Swiper>
 
     <a href="#get-started" class="btn btn-primary">Get Started</a>
   </div>
@@ -79,52 +47,5 @@
     @include breakpoint-up(md) {
       margin-block-end: calc(var(--spacer-400) * 8);
     }
-  }
-
-  .slider {
-    @include flex();
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    clear: both;
-    margin-block: var(--spacer-900) var(--spacer-700);
-    // margin: 10px -10px 20px;
-    // FIXME: Negative margin value [margin-inline: -var(--spacer-700)];
-  }
-
-  .slider-item {
-    display: block;
-    flex: 0 0 auto;
-    // height: 200px;
-    padding: 0 10px;
-  }
-
-  .slider-card {
-    @include flex($align: center, $justify: center);
-    background-color: var(--clr-neutral-200);
-    border-radius: var(--spacer-200);
-    border: 0.125rem solid var(--clr-primary-100);
-    flex-basis: 540px;
-    flex-flow: column nowrap;
-    gap: var(--gap);
-    height: 100%;
-    margin-inline: auto;
-    padding: var(--spacer-700) var(--spacer-500) var(--spacer-600);
-    position: relative;
-
-    /* width: calc(100% - 20px);
-          margin: 0 auto; */
-  }
-
-  .slider-image {
-    aspect-ratio: 1/1;
-    position: absolute;
-    inset: -2.1875rem auto auto 50%;
-    transform: translateX(-50%);
-    width: 3.75rem;
-  }
-
-  .slider-heading {
-    font-size: var(--fs-400);
   }
 </style>

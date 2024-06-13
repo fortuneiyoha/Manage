@@ -1,0 +1,63 @@
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <slot />
+  </div>
+
+  <div class="swiper-pagination"></div>
+</div>
+
+<style lang="scss">
+  @use "../styles/scss/abstracts/" as *;
+
+  .swiper {
+    --swiper-theme-color: var(--clr-primary-100);
+    margin-block-end: var(--spacer-400);
+    padding: var(--spacer-800) var(--spacer-300) var(--spacer-700);
+
+    @include breakpoint-up(md) {
+      overflow: visible;
+      margin-block-end: 0;
+    }
+  }
+
+  .swiper-pagination {
+    @include breakpoint-up(md) {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+  import { Pagination } from "swiper/modules";
+  import "swiper/css/bundle";
+  import "swiper/css/autoplay";
+  import "swiper/css/pagination";
+
+  const swiper = new Swiper(".swiper", {
+    modules: [Pagination],
+    direction: "horizontal",
+    grabCursor: true,
+    spaceBetween: 30,
+    autoplay: {
+      delay: 2000,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      540: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      840: {
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        initialSlide: 1,
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+    },
+  });
+</script>
