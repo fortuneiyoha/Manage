@@ -21,6 +21,7 @@ const navLinks: string[] = [
               xmlns="http://www.w3.org/2000/svg"
               width="146"
               height="24"
+              aria-hidden="true"
               ><g fill="none" fill-rule="evenodd"
                 ><path
                   fill="var(--clr-neutral-100)"
@@ -47,6 +48,7 @@ const navLinks: string[] = [
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="20"
+                aria-hidden="true"
                 class="socials-icon"
               >
                 <path
@@ -62,6 +64,7 @@ const navLinks: string[] = [
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
                 height="20"
+                aria-hidden="true"
                 class="socials-icon"
                 ><path
                   fill="var(--clr-neutral-100)"
@@ -76,6 +79,7 @@ const navLinks: string[] = [
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
                 height="18"
+                aria-hidden="true"
                 class="socials-icon"
                 ><path
                   fill="var(--clr-neutral-100)"
@@ -90,6 +94,7 @@ const navLinks: string[] = [
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="20"
+                aria-hidden="true"
                 class="socials-icon"
               >
                 <path
@@ -105,6 +110,7 @@ const navLinks: string[] = [
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
                 height="20"
+                aria-hidden="true"
                 class="socials-icon"
                 ><path
                   fill="var(--clr-neutral-100)"
@@ -153,7 +159,6 @@ const navLinks: string[] = [
           </div>
         </div>
 
-        {/* FIXME: Improve form submission information */}
         <div class="column column-form">
           <div class="form-newsletter-container js-form-newsletter-container">
             <form class="form-newsletter js-form-newsletter">
@@ -251,8 +256,13 @@ const navLinks: string[] = [
 
   .form-subscribe-info-container {
     display: none;
-    padding: var(--spacer-400) var(--spacer-500);
+    padding-block-end: var(--spacer-500);
+
+    @include breakpoint-up(md) {
+      padding-inline-end: var(--spacer-800);
+    }
   }
+
   .form-subscribe-info {
     @include breakpoint-down(md) {
       text-align: center;
@@ -260,8 +270,10 @@ const navLinks: string[] = [
 
     .secondary-heading {
       color: var(--clr-neutral-100);
+      margin: 0;
     }
   }
+
   .footer .column-form {
     @include breakpoint-down(md) {
       order: 1;
@@ -275,8 +287,8 @@ const navLinks: string[] = [
       place-items: flex-start;
 
       @include breakpoint-down(md) {
-        max-width: calc(100% - 4rem);
         margin-inline: auto;
+        max-width: calc(100% - 4rem);
       }
     }
 
@@ -287,9 +299,9 @@ const navLinks: string[] = [
 
   .footer .column-socials {
     @include flex($align: center, $justify: space-between);
+    align-items: flex-start;
     flex-flow: column nowrap;
     gap: var(--gap);
-    align-items: flex-start;
 
     @include breakpoint-down(md) {
       align-items: center;
@@ -354,8 +366,12 @@ const navLinks: string[] = [
     if (inputValue !== "" && inputRegex.test(inputValue)) {
       newsletterInfo.style.display = "none";
       subscribeInfo.style.display = "block";
-    } else {
-      emailInput.classList.add("error");
+      emailInput.value = "";
     }
+
+    setInterval(() => {
+      newsletterInfo.style.display = "block";
+      subscribeInfo.style.display = "none";
+    }, 5000);
   });
 </script>

@@ -2,6 +2,11 @@
 import "../styles/scss/style.scss";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+// TODO: improve description content
+const {
+  title = "Manage | Makes team planning easier.",
+  description = "Manage | Makes team planning easier ... ... ...",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -16,38 +21,26 @@ import Footer from "../components/Footer.astro";
       sizes="32x32"
       href="/images/favicon-32x32.png"
     />
-    <title>Manage | Makes team planning easier.</title>
+    <title>{title}</title>
 
     <!-- FIXME: Improve meta tags title and description. -->
     <!-- Primary Meta Tags -->
     <meta name="author" content="Fortune O. Iyoha" />
-    <meta name="title" content="Manage | Makes team planning easier." />
-    <meta
-      name="description"
-      content="Manage | Makes team planning easier ... ... ..."
-    />
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://manage.pages.dev/" />
-    <meta property="og:title" content="Manage | Makes team planning easier." />
-    <meta
-      property="og:description"
-      content="Manage | Makes team planning easier ... ... ..."
-    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:image" content="https://manage.pages.dev/manage.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://manage.pages.dev/" />
-    <meta
-      property="twitter:title"
-      content="Manage | Makes team planning easier."
-    />
-    <meta
-      property="twitter:description"
-      content="Manage | Makes team planning easier ... ... ..."
-    />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
     <meta
       property="twitter:image"
       content="https://manage.pages.dev/manage.jpg"
