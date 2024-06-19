@@ -2,11 +2,19 @@
 import "../styles/scss/style.scss";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  isHome?: boolean;
+}
+
 // TODO: improve description content
 const {
   title = "Manage | Makes team planning easier.",
   description = "Manage | Makes team planning easier ... ... ...",
-} = Astro.props;
+  isHome = false,
+} = Astro.props as Props;
 ---
 
 <!doctype html>
@@ -15,6 +23,7 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <!-- TODO: Design a custom favicon -->
     <link
       rel="icon"
       type="image/png"
@@ -50,16 +59,63 @@ const {
 
   <body>
     <Header />
-    <main id="main">
+    <main id="main" class={isHome ? "main main-bg" : "main"}>
       <slot />
     </main>
     <Footer />
   </body>
 </html>
 
-<style>
+<style lang="scss">
+  @use "../styles/scss/abstracts/" as *;
+
   body.active {
     height: 100vh;
     overflow: hidden;
+  }
+
+  // TODO: Delete after debugging
+  body {
+    background-color: var(--clr-neutral-400);
+  }
+
+  .main-bg {
+    position: relative;
+    z-index: -5;
+
+    &::before,
+    &::after {
+      --bg-dimension: 31.25rem; // 500px
+
+      content: "";
+      background: url(/images/bg-tablet-pattern.svg) no-repeat
+        var(--bg-position-x, 0) var(--bg-position-y, 0);
+      background-size: var(--bg-size, 100%);
+      position: absolute;
+      inset-block-start: var(--bg-offset-y, 0);
+      inset-inline-start: var(--bg-offset-x, 0);
+      height: var(--bg-dimension);
+      width: var(--bg-dimension);
+      z-index: inherit;
+    }
+
+    &::before {
+      --bg-dimension: 25rem; // 400px
+      --bg-offset-y: -5%;
+      --bg-offset-x: 20%;
+
+      @include breakpoint-up(sm) {
+        --bg-offset-x: 25%;
+      }
+    }
+
+    &::after {
+      --bg-dimension: 20rem; // 320px
+      --bg-offset-x: 60%;
+
+      @include breakpoint-up(sm) {
+        --bg-offset-x: 70%;
+      }
+    }
   }
 </style>

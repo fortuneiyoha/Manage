@@ -72,21 +72,13 @@ const navLinks: string[] = [
 
   .header {
     isolation: isolate;
-    margin-block: var(--spacer-700);
-
-    @include breakpoint-up(md) {
-      margin-block-end: var(--spacer-800);
-    }
+    padding-block: var(--spacer-500);
 
     .container {
       @extend %flex-center-between;
 
       gap: var(--gap);
       position: relative;
-
-      @include breakpoint-down(md) {
-        height: 2.2197rem;
-      }
     }
   }
 
@@ -121,6 +113,7 @@ const navLinks: string[] = [
     border-radius: var(--spacer-100);
     color: var(--clr-primary-200);
     font-weight: var(--fw-medium);
+    overflow-y: auto;
 
     @include breakpoint-down(md) {
       background-color: var(--clr-neutral-100);

@@ -6,31 +6,41 @@ import MainLayout from "../layouts/MainLayout.astro";
   title="404 | Page Not Found"
   description="The page you are looking for doesn't exist or might have been removed."
 >
-  <main class="error-page">
+  <section class="error-page">
     <div class="container">
+      <img src="/images/icon-triangle-exclamation.svg" alt="" />
       <h1 class="primary-heading">
         The page you are looking for doesn't exist or might have been removed.
       </h1>
-
       <a href="/">Go back home</a>
     </div>
-  </main>
+  </section>
 </MainLayout>
 
 <style lang="scss">
   @use "../styles/scss/abstracts/" as *;
 
+  %spacer-bottom {
+    margin-block-end: var(--spacer-500);
+  }
+
   .error-page {
-    padding: var(--spacer-400);
+    margin-block-end: var(--spacer-600);
     text-align: center;
 
     .container {
       --container-max-width: 45rem;
     }
 
+    img {
+      @extend %spacer-bottom;
+      margin-inline: auto;
+      max-width: 8rem;
+    }
+
     .primary-heading {
+      @extend %spacer-bottom;
       color: var(--clr-primary-200);
-      margin-block-end: var(--spacer-500);
     }
 
     a {
