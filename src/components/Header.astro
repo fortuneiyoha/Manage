@@ -10,6 +10,7 @@ const navLinks: string[] = [
 
 <header class="header">
   <div class="container">
+    <strong class="visually-hidden">Header Navigation</strong>
     <a href="#main" class="visually-hidden-focusable">Skip to main content</a>
     <a href="/" class="logo"
       ><span class="visually-hidden">Logo</span><svg
@@ -72,7 +73,13 @@ const navLinks: string[] = [
 
   .header {
     isolation: isolate;
-    padding-block: var(--spacer-500);
+    padding-block: var(--spacer-700);
+    position: relative;
+    z-index: 5;
+
+    @include breakpoint-up(md) {
+      padding-block-end: var(--spacer-600);
+    }
 
     .container {
       @extend %flex-center-between;
@@ -81,25 +88,16 @@ const navLinks: string[] = [
       position: relative;
     }
   }
-
-  // Logo:
-  // 1. Explicit height for logo to be
-  //    vertically aligned middle in the container.
-  // 2. Explicit width for logo to scale
-  //    according to browser's default font size.
   .logo {
-    margin-block-start: 0.35rem; // [1] 5.6px
+    margin-block-start: 0.35rem;
 
     img {
-      width: 9.125rem; // [2] 146px
+      width: 9.125rem;
     }
   }
-
-  // Menu Toggle: Explicit width for menu toggle icon
-  // to scale according to browser's default font size.
   .navbar-toggle {
     img {
-      width: 1.5625rem; // 25px
+      width: 1.5625rem;
     }
 
     @include breakpoint-up(md) {
@@ -113,14 +111,15 @@ const navLinks: string[] = [
     border-radius: var(--spacer-100);
     color: var(--clr-primary-200);
     font-weight: var(--fw-medium);
-    overflow-y: auto;
 
     @include breakpoint-down(md) {
       background-color: var(--clr-neutral-100);
       box-shadow: var(--shadow);
       display: none;
+      height: min(18.25rem, calc(100vh - 2rem)); // 292px
       inset-block-start: 210%;
       inset-inline-start: 50%;
+      overflow-y: auto;
       padding: var(--spacer-700) var(--spacer-500);
       position: absolute;
       text-align: center;
@@ -132,12 +131,11 @@ const navLinks: string[] = [
   .navbar.open {
     display: block;
 
-    // FIXME: Adjust menu to fit in screen in landscape view
-    // @include breakpoint-down(md) {
-    //   @media (orientation: landscape) {
-    //     inset-block-start: -90%;
-    //   }
-    // }
+    @include breakpoint-down(md) {
+      @media (orientation: landscape) {
+        inset-block-start: -40%;
+      }
+    }
   }
 
   .overlay {
@@ -218,12 +216,11 @@ const navLinks: string[] = [
   }
 </style>
 
-<script>
+<script lang="js">
   const navToggle = document.querySelector(".js-navbar-toggle");
   const navbar = document.querySelector(".js-navbar");
   const overlay = document.querySelector(".overlay");
 
-  // Toggles the navigation menu when the menu button is clicked
   navToggle.addEventListener("click", () => {
     const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
 
@@ -232,10 +229,9 @@ const navLinks: string[] = [
     navbar.classList.toggle("open");
     overlay.classList.toggle("active");
 
-    // Switch the menu icon based on the menu state
     const menuIcon = navToggle.querySelector("img");
     menuIcon.src = isExpanded
-      ? "/images/icon-hamburger.svg" // Menu icon when the menu is closed
-      : "/images/icon-close.svg"; // Menu icon when the menu is open
+      ? "/images/icon-hamburger.svg"
+      : "/images/icon-close.svg";
   });
 </script>

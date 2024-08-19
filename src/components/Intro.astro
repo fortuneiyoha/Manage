@@ -25,9 +25,10 @@
 
   .intro {
     @include flex($align: center, $justify: space-between);
-    margin-block: var(--spacer-800);
+    margin-block-end: var(--spacer-900);
 
     @include breakpoint-up(md) {
+      margin-block-start: var(--spacer-500);
       margin-block-end: calc(var(--spacer-400) * 8);
     }
 

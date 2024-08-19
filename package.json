@@ -12,7 +12,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^4.9.3",
-    "swiper": "^11.1.4"
+    "astro": "^4.12.2",
+    "swiper": "^11.1.8"
   }
 }

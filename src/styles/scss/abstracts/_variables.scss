@@ -2,9 +2,10 @@
 // This file contains all application-wide Sass variables.
 // --------------------------------------------------------
 
-// Breakpoints
-//
-// 540x, 840px, 992px, 1200px, 1440px
+///
+/// Breakpoints
+///
+// 540px, 840px, 992px, 1200px, 1440px
 $breakpoint-up: (
   "sm": "33.75em",
   "md": "52.5em",
@@ -44,10 +45,10 @@ $colors: (
   ),
 );
 
-//
-// Font
-//
-// Font Family
+///
+/// Font
+///
+/// Font Family
 $ff-primary: "Be Vietnam Pro", sans-serif;
 
 $ff-body: var(--ff-primary);

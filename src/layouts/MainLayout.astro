@@ -6,14 +6,14 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title?: string;
   description?: string;
-  isHome?: boolean;
+  isHomePage?: boolean;
 }
 
-// TODO: improve description content
+// FIXME: improve description content
 const {
   title = "Manage | Makes team planning easier.",
   description = "Manage | Makes team planning easier ... ... ...",
-  isHome = false,
+  isHomePage = false,
 } = Astro.props as Props;
 ---
 
@@ -23,7 +23,6 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <!-- TODO: Design a custom favicon -->
     <link
       rel="icon"
       type="image/png"
@@ -59,7 +58,7 @@ const {
 
   <body>
     <Header />
-    <main id="main" class={isHome ? "main main-bg" : "main"}>
+    <main id="main" class={isHomePage ? "main main-bg" : "main"}>
       <slot />
     </main>
     <Footer />
@@ -74,47 +73,72 @@ const {
     overflow: hidden;
   }
 
-  // TODO: Delete after debugging
-  body {
-    background-color: var(--clr-neutral-400);
-  }
-
   .main-bg {
     position: relative;
-    z-index: -5;
 
     &::before,
     &::after {
       --bg-dimension: 31.25rem; // 500px
-
       content: "";
       background: url(/images/bg-tablet-pattern.svg) no-repeat
         var(--bg-position-x, 0) var(--bg-position-y, 0);
       background-size: var(--bg-size, 100%);
-      position: absolute;
+      height: var(--bg-dimension);
       inset-block-start: var(--bg-offset-y, 0);
       inset-inline-start: var(--bg-offset-x, 0);
-      height: var(--bg-dimension);
+      position: absolute;
       width: var(--bg-dimension);
-      z-index: inherit;
+      z-index: -5;
     }
 
     &::before {
       --bg-dimension: 25rem; // 400px
-      --bg-offset-y: -5%;
-      --bg-offset-x: 20%;
+      --bg-offset-x: 18%;
+      --bg-offset-y: -6%;
+
+      @media (min-width: 27.5em) {
+        --bg-dimension: 30rem; // 480px
+        --bg-offset-x: 30%;
+      }
 
       @include breakpoint-up(sm) {
-        --bg-offset-x: 25%;
+        --bg-dimension: 35rem; // 560px
+        --bg-offset-x: 24%;
+      }
+
+      @media (min-width: 40em) {
+        --bg-offset-x: 42%;
+      }
+
+      @include breakpoint-up(md) {
+        --bg-dimension: 45rem; // 720px
+        --bg-offset-x: -20%;
+        --bg-offset-y: 55%;
       }
     }
 
     &::after {
       --bg-dimension: 20rem; // 320px
       --bg-offset-x: 60%;
+      --bg-offset-y: 13%;
+
+      @media (min-width: 27.5em) {
+        --bg-dimension: 25rem; //400px
+      }
 
       @include breakpoint-up(sm) {
+        --bg-dimension: 30rem; // 560px
         --bg-offset-x: 70%;
+      }
+
+      @media (min-width: 40em) {
+        --bg-offset-x: 70%;
+      }
+
+      @include breakpoint-up(md) {
+        --bg-dimension: 45rem; // 720px
+        --bg-offset-x: 58%;
+        --bg-offset-y: -16%;
       }
     }
   }

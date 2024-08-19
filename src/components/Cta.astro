@@ -16,8 +16,25 @@
   @use "../styles/scss/abstracts/" as *;
 
   .cta {
-    background-color: var(--clr-primary-100);
+    --bg-image: url(/images/bg-simplify-section-mobile.svg);
+    --bg-position-x: 0;
+    --bg-position-y: 50%;
+    --bg-size: 22%;
+
+    background: var(--clr-primary-100) var(--bg-image) no-repeat
+      var(--bg-position-x) var(--bg-position-y);
+    background-size: var(--bg-size);
     padding-block: var(--spacer-900);
+
+    @include breakpoint-up(md) {
+      --bg-image: url(/images/bg-simplify-section-desktop.svg);
+      --bg-position-y: 100%;
+      --bg-size: auto;
+    }
+
+    @include breakpoint-up(xl) {
+      --bg-position-x: -100%;
+    }
 
     @include breakpoint-down(md) {
       text-align: center;

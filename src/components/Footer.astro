@@ -12,7 +12,7 @@ const navLinks: string[] = [
 
 <footer class="footer">
   <div class="container">
-    <h4 class="visually-hidden">Footer Navigation</h4>
+    <strong class="visually-hidden">Footer Navigation</strong>
     <nav>
       <div class="grid">
         <div class="column column-socials">
@@ -42,7 +42,7 @@ const navLinks: string[] = [
           >
 
           <div class="socials">
-            <a href="#https://facebook.com/manage" class="socials-link">
+            <a href="#facebook/manage" class="socials-link">
               <span class="visually-hidden">Visit our Facebook Page.</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const navLinks: string[] = [
               </svg>
             </a>
 
-            <a href="#https://youtube.com/manage" class="socials-link">
+            <a href="#youtube/manage" class="socials-link">
               <span class="visually-hidden">Visit our YouTube channel.</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@ const navLinks: string[] = [
               </svg>
             </a>
 
-            <a href="#https://twitter.com/manage" class="socials-link">
+            <a href="#twitter/manage" class="socials-link">
               <span class="visually-hidden">Visit our Twitter profile.</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,8 +88,8 @@ const navLinks: string[] = [
               </svg>
             </a>
 
-            <a href="#https://pinterest.com/manage" class="socials-link">
-              <span class="visually-hidden">Visit our pinterest profile.</span>
+            <a href="#pinterest/manage" class="socials-link">
+              <span class="visually-hidden">Visit our Pinterest profile.</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -104,8 +104,8 @@ const navLinks: string[] = [
               </svg>
             </a>
 
-            <a href="#https://instagram.com/manage" class="socials-link">
-              <span class="visually-hidden">Visit our instagram page.</span>
+            <a href="#instagram/manage" class="socials-link">
+              <span class="visually-hidden">Visit our Instagram page.</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -161,12 +161,14 @@ const navLinks: string[] = [
 
         <div class="column column-form">
           <div class="form-newsletter-container js-form-newsletter-container">
-            <form class="form-newsletter js-form-newsletter">
+            <form class="form-newsletter js-form-newsletter" name="newsletter">
               <input
                 type="email"
                 class="form-newsletter-input js-form-newsletter-input"
                 placeholder="Updates in your inbox…"
                 aria-label="Get updates in your inbox. Input your email"
+                name="email"
+                autocomplete="off"
                 required
               />
               <button type="submit" class="btn btn-primary">Go</button>
@@ -348,7 +350,7 @@ const navLinks: string[] = [
   }
 </style>
 
-<script>
+<script lang="js">
   const newsletterInfo = document.querySelector(
     ".js-form-newsletter-container"
   );
@@ -369,9 +371,10 @@ const navLinks: string[] = [
       emailInput.value = "";
     }
 
-    setInterval(() => {
-      newsletterInfo.style.display = "block";
-      subscribeInfo.style.display = "none";
-    }, 5000);
+    // FIXME: Fix success message on form submit
+    // setInterval(() => {
+    //   newsletterInfo.style.display = "block";
+    //   subscribeInfo.style.display = "none";
+    // }, 5000);
   });
 </script>

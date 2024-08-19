@@ -1,5 +1,6 @@
 <section class="features">
   <div class="container">
+    <strong class="visually-hidden">Manage Features</strong>
     <div class="grid">
       <div class="column">
         <h2 class="primary-heading">
@@ -16,7 +17,7 @@
         <ul class="features-list">
           <li class="features-item">
             <span class="features-item-num"></span>
-            <h2 class="features-title">Track company-wide progress</h2>
+            <h3 class="features-title">Track company-wide progress</h3>
             <p class="lead">
               See how your day-to-day tasks fit into the wider vision. Go from
               tracking progress at the milestone level all the way done to the
@@ -26,7 +27,7 @@
 
           <li class="features-item">
             <span class="features-item-num"></span>
-            <h2 class="features-title">Advanced built-in reports</h2>
+            <h3 class="features-title">Advanced built-in reports</h3>
             <p class="lead">
               Set internal delivery estimates and track progress toward company
               goals. Our customisable dashboard helps you build out the reports
@@ -36,7 +37,7 @@
 
           <li class="features-item">
             <span class="features-item-num"></span>
-            <h2 class="features-title">Everything you need in one place</h2>
+            <h3 class="features-title">Everything you need in one place</h3>
             <p class="lead">
               Stop jumping from one service to another to communicate, store
               files, track tasks and share documents. Manage offers an
@@ -120,7 +121,7 @@
     }
   }
 
-  .features .features-title {
+  .features-title {
     display: flex;
     align-items: center;
     font-size: var(--fs-400);
@@ -129,6 +130,8 @@
       @include breakpoint-down(md) {
         content: "";
         background-color: inherit;
+        //FIXME: Clip a curved edge on left side of rectangle
+        // clip-path: polygon(0, 0, 0, 0) ;
         font-weight: inherit;
         height: 100%;
         inset-inline-start: -8%;

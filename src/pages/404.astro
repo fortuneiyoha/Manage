@@ -41,6 +41,12 @@ import MainLayout from "../layouts/MainLayout.astro";
     .primary-heading {
       @extend %spacer-bottom;
       color: var(--clr-primary-200);
+
+      @include breakpoint-down(md) {
+        font-size: var(--fs-500);
+        margin-inline: auto;
+        max-width: 30ch;
+      }
     }
 
     a {

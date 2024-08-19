@@ -45,7 +45,7 @@ Users should be able to:
 
 ### Technology used
 
-<!-- FIXME: Improve this buil section. -->
+<!-- FIXME: Improve this build section. -->
 
 - **Mobile-first workflow:** To ensure a better user experience on smaller screens and devices.
 - [**Sass:**](https://sass.lang.com/) To write CSS more efficiently with nested rules, variables, and mixins.
