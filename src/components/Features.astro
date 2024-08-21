@@ -130,8 +130,6 @@
       @include breakpoint-down(md) {
         content: "";
         background-color: inherit;
-        //FIXME: Clip a curved edge on left side of rectangle
-        // clip-path: polygon(0, 0, 0, 0) ;
         font-weight: inherit;
         height: 100%;
         inset-inline-start: -8%;
@@ -143,11 +141,6 @@
       @include breakpoint-down(sm) {
         inset-inline-start: -10%;
       }
-    }
-
-    @include breakpoint-down(md) {
-      background-color: var(--clr-neutral-200);
-      position: relative;
     }
   }
 </style>

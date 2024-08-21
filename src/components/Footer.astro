@@ -371,10 +371,9 @@ const navLinks: string[] = [
       emailInput.value = "";
     }
 
-    // FIXME: Fix success message on form submit
-    // setInterval(() => {
-    //   newsletterInfo.style.display = "block";
-    //   subscribeInfo.style.display = "none";
-    // }, 5000);
+    setTimeout(() => {
+      newsletterInfo.style.display = "block";
+      subscribeInfo.style.display = "none";
+    }, 3000);
   });
 </script>
