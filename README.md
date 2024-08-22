@@ -1,11 +1,11 @@
 # Manage
 
-Manage is a modern web application designed to streamline team workflows and enhance project management. 🚀 Built with a focus on user experience and efficiency, Manage helps software teams plan day-to-day tasks while keeping overarching team goals in view. 🗂️✨
+Manage is a modern web application designed to streamline team workflows and enhance project management. 🚀 Built with a focus on user experience and efficiency, Manage helps software teams plan day-to-day tasks while keeping overarching team goals in view. 🗂️
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [Features](#features)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -17,16 +17,16 @@ Manage is a modern web application designed to streamline team workflows and enh
 
 ## Overview
 
-### The challenge
+### Features
 
-Users should be able to:
+Users can:
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- See all testimonials in a horizontal slider
-- Receive an error message when the newsletter sign up `form` is submitted if:
-  - The `input` field is empty
-  - The email address is not formatted correctly
+- 📱 **Enjoy a Responsive Layout:** View the optimal site layout tailored to their device's screen size.
+- 🎨 **Interactive Hover States:** See stylish hover effects on all interactive elements.
+- 🎠 **Horizontal Slider:** Browse through all testimonials in a smooth, horizontal slider.
+- ⚠️ **Error Handling for Newsletter Signup:** Receive clear error messages if:
+  - ✏️ The `input` field is empty
+  - 📧 The email address is incorrectly formatted
 
 ### Screenshot
 
@@ -53,14 +53,14 @@ Users should be able to:
 
 ### Continued development
 
-I’m impressed by Astro’s ease of use for static sites. 🌟 I plan to use Astro in future projects for its flexibility and performance, making it ideal for creating fast and optimized content-rich websites. 🚀
+I’m impressed by Astro’s ease of use for static sites. 🌟 I plan to use Astro in future projects for its flexibility and performance, making it ideal for creating fast and optimized content-rich websites.
 
 ### Useful resources
 
-- [**Astro**](https://astro.build): Official framework website with essential documentation.
-- [**Traversy Media | Astro Crash Course**](https://youtu.be/Oi9z5gfIHJs?si=8CuMfRjG3gN5uENH): Practical guide for building with Astro.
-- [**Traversy Media | TypeScript Crash Course**](https://youtu.be/BCg4U1FzODs?si=X1fGHsmifXMKNf35): Introduction to TypeScript for effective use in projects.
-- [**Swiper**](https://swiperjs.com): Official site for the Swiper JS library, useful for implementing carousels.
+- [**Astro**](https://astro.build): Official framework website with essential documentation. 🚀
+- [**Traversy Media | Astro Crash Course**](https://youtu.be/Oi9z5gfIHJs?si=8CuMfRjG3gN5uENH): Practical guide for building with Astro. 📹
+- [**Traversy Media | TypeScript Crash Course**](https://youtu.be/BCg4U1FzODs?si=X1fGHsmifXMKNf35): Introduction to TypeScript for effective use in projects. 🎓
+- [**Swiper**](https://swiperjs.com): Official site for the Swiper JS library, useful for implementing carousels. 📱✨
 
 ## Author
 
