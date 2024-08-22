@@ -3,16 +3,17 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout
-  title="404 | Page Not Found"
-  description="The page you are looking for doesn't exist or might have been removed."
+  title="404 | Page Not Found - Manage"
+  description="Sorry, the page you're looking for doesn't exist. Get back on track by visiting the Manage homepage and find what you need."
 >
   <section class="error-page">
     <div class="container">
       <img src="/images/icon-triangle-exclamation.svg" alt="" />
       <h1 class="primary-heading">
-        The page you are looking for doesn't exist or might have been removed.
+        Oops! The page you&CloseCurlyQuote;re looking for
+        doesn&CloseCurlyQuote;t exist or has been moved.
       </h1>
-      <a href="/">Go back home</a>
+      <a href="/">Return to Homepage</a>
     </div>
   </section>
 </MainLayout>
@@ -25,7 +26,7 @@ import MainLayout from "../layouts/MainLayout.astro";
   }
 
   .error-page {
-    margin-block-end: var(--spacer-600);
+    margin-block-end: var(--spacer-700);
     text-align: center;
 
     .container {
