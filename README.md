@@ -1,8 +1,6 @@
-<!-- FIXME: Improve markdown and FEM solution feedback -->
+# Manage
 
-# Frontend Mentor - Manage landing page solution
-
-This is a solution to the [Manage landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/manage-landing-page-SLXqC6P5). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+Manage is a modern web application designed to streamline team workflows and enhance project management. 🚀 Built with a focus on user experience and efficiency, Manage helps software teams plan day-to-day tasks while keeping overarching team goals in view. 🗂️✨
 
 ## Table of contents
 
@@ -36,30 +34,34 @@ Users should be able to:
 
 ### Links
 
-<!-- FIXME: Improve this link section. -->
-
-- **Solution:** [Frontend Mentor: Manage landing page](https://link_to_challenge)
-- **Live Site:** [https://link_to_live_site/](https://link_to_live_site/)
+- **Solution:** [Frontend Mentor: Manage Landing Page](https://link_to_challenge) 🛠️
+- **Live Site:** [View Live Site](https://link_to_live_site/) 🌐✨
 
 ## My process
 
 ### Technology used
 
-<!-- FIXME: Improve this build section. -->
-
-- **Mobile-first workflow:** To ensure a better user experience on smaller screens and devices.
-- [**Sass:**](https://sass.lang.com/) To write CSS more efficiently with nested rules, variables, and mixins.
-- [**Astro**](https://astro.build/) - Content Based Framework ...
+- [**Astro**](https://astro.build/): A modern framework for fast, optimized static site generation with a component-based approach. 🚀
+- [**Sass**](https://sass.lang.com/): Efficient CSS styling with features like nested rules, variables, and mixins for better maintainability. 🎨
+- [**Swiper**](https://swiperjs.com): A flexible library for responsive, touch-enabled sliders and carousels. 📱✨
 
 ### What I learned
 
+- Gained insights into organizing a fully-fledged project and implementing effective component architecture. 🛠️
+- Enhanced skills in styling with Sass within Astro and built dynamic UI components using Swiper. 🎨🚀
+- Improved understanding of static site development. 🌐
+
 ### Continued development
+
+I’m impressed by Astro’s ease of use for static sites. 🌟 I plan to use Astro in future projects for its flexibility and performance, making it ideal for creating fast and optimized content-rich websites. 🚀
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [**Astro**](https://astro.build): Official framework website with essential documentation.
+- [**Traversy Media | Astro Crash Course**](https://youtu.be/Oi9z5gfIHJs?si=8CuMfRjG3gN5uENH): Practical guide for building with Astro.
+- [**Traversy Media | TypeScript Crash Course**](https://youtu.be/BCg4U1FzODs?si=X1fGHsmifXMKNf35): Introduction to TypeScript for effective use in projects.
+- [**Swiper**](https://swiperjs.com): Official site for the Swiper JS library, useful for implementing carousels.
 
 ## Author
 
-This project was created by **Fortune Iyoha**. If you want to connect with me or view more of my projects, you can visit my [Frontend Mentor profile](https://www.frontendmentor.io/profile/fortuneiyoha) or follow me on [𝕏 (formerly Twitter)](https://x.com/fortuneiyoha) for updates and web development discussions.
+Created by [**Fortune Iyoha**](https://linktr.ee/fortuneiyoha). 🌟 Connect with me on my [Frontend Mentor profile](https://www.frontendmentor.io/profile/fortuneiyoha) or follow me on [𝕏 (formerly Twitter)](https://x.com/fortuneiyoha) for updates and web development discussions. 💬
