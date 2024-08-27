@@ -34,8 +34,8 @@ Users can:
 
 ### Links
 
-- **Solution:** [Frontend Mentor: Manage Landing Page](https://link_to_challenge) 🛠️
-- **Live Site:** [View Live Site](https://link_to_live_site/) 🌐✨
+- **Solution:** [Frontend Mentor: Manage Landing Page](https://www.frontendmentor.io/solutions/manage-landing-page-TmNbtDofJM) 🛠️
+- **Live Site:** [View Live Site](https://manage-e9a.pages.dev/) 🌐✨
 
 ## My process
 
