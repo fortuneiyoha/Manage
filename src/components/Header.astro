@@ -51,7 +51,7 @@ const navLinks: string[] = [
         {
           navLinks.map((linkText) => (
             <li class="navbar-item">
-              <a href={`#${linkText.toLowerCase()}`} class="navbar-link">
+              <a href={`#${linkText.toLowerCase().replace(/\s+/g, '-')}`} class="navbar-link">
                 {linkText}
               </a>
             </li>

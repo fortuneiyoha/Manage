@@ -42,7 +42,7 @@ Users can:
 ### Technology used
 
 - [**Astro**](https://astro.build/): A modern framework for fast, optimized static site generation with a component-based approach. 🚀
-- [**Sass**](https://sass.lang.com/): Efficient CSS styling with features like nested rules, variables, and mixins for better maintainability. 🎨
+- [**Sass**](https://sass-lang.com/): Efficient CSS styling with features like nested rules, variables, and mixins for better maintainability. 🎨
 - [**Swiper**](https://swiperjs.com): A flexible library for responsive, touch-enabled sliders and carousels. 📱✨
 
 ### What I learned

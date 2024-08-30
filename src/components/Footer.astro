@@ -129,7 +129,7 @@ const navLinks: string[] = [
                   navLinks.slice(0, 4).map((linkText) => (
                     <li class="footer-item">
                       <a
-                        href={`#${linkText.toLowerCase()}`}
+                        href={`#${linkText.toLowerCase().replace(/\s+/g, "-")}`}
                         class="footer-link"
                       >
                         {linkText}
@@ -146,7 +146,7 @@ const navLinks: string[] = [
                   navLinks.slice(4).map((linkText) => (
                     <li class="footer-item">
                       <a
-                        href={`#${linkText.toLowerCase()}`}
+                        href={`#${linkText.toLowerCase().replace(/\s+/g, "-")}`}
                         class="footer-link"
                       >
                         {linkText}
